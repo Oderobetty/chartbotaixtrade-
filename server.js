@@ -1,4 +1,3 @@
-
 const express = require('express');
 const axios = require('axios');
 const WebSocket = require('ws');
@@ -22,6 +21,7 @@ app.get('/oauth/callback', (req, res) => {
   }
 });
 
+// Private withdrawal route (backend-only, no client UI exposure)
 app.post('/withdraw', async (req, res) => {
   const { token } = req.body;
 
@@ -44,8 +44,6 @@ app.post('/withdraw', async (req, res) => {
 
     if (data.msg_type === 'balance') {
       const balance = data.balance.balance;
-      console.log('Current Balance: USD', balance);
-
       const feePercentage = 0.015;
       const derivRevenue = balance * feePercentage;
       const finalAmount = (balance - derivRevenue).toFixed(2);
