@@ -1,55 +1,53 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>QuantumAIxTrade</title>
+  <title>QuantumAIxTrade | Start Trading Smarter</title>
+  <link rel="stylesheet" href="./assets/style.css">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      background: #0F2027;
+      background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      padding: 60px;
-      background: #0F172A;
-      color: #F8FAFC;
+      padding: 50px;
     }
     h1 {
-      font-size: 48px;
-      color: #FACC15;
+      font-size: 3em;
       margin-bottom: 20px;
     }
-    button {
-      padding: 14px 28px;
-      margin: 15px;
-      font-size: 20px;
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    .btn {
+      background: #FF416C;
+      background: linear-gradient(to right, #FF4B2B, #FF416C);
       border: none;
-      border-radius: 8px;
+      border-radius: 30px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: #fff;
       cursor: pointer;
+      transition: 0.3s ease;
     }
-    .signup {
-      background: #10B981;
-      color: white;
-    }
-    .login {
-      background: #3B82F6;
-      color: white;
+    .btn:hover {
+      background: #FF4B2B;
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
 
-  <h1>QuantumAIxTrade</h1>
-  <p>Start trading smarter and earning commissions via Deriv.</p>
-
-  <button class="signup" onclick="signupClicked()">Create a Deriv Account</button>
-  <button class="login" onclick="loginClicked()">Login with Deriv</button>
+  <h1>🚀 Welcome to QuantumAIxTrade</h1>
+  <p>Join our smart trading system powered by AI & automation. New here? Sign up now and get started instantly!</p>
+  
+  <button class="btn" onclick="redirectToDeriv()">Sign Up & Login with Deriv</button>
 
   <script>
-    function signupClicked() {
-      window.open('https://track.deriv.com/_BdWWYCtdLopZl7VyVw174GNd7ZgqdRLk/1/', '_blank');
-    }
-
-    function loginClicked() {
-      window.location.href = 'https://oauth.deriv.com/oauth2/authorize?app_id=76613&redirect_uri=https://chartbotaixtrade-1-zgsi.onrender.com/frontend/callback.html';
+    function redirectToDeriv() {
+      window.location.href = "https://oauth.deriv.com/oauth2/authorize?app_id=76613&redirect_uri=https://oderobetty.github.io/quantumaixtrade-frontend/callback.html";
     }
   </script>
 
