@@ -1,7 +1,53 @@
-// Example Deriv OAuth callback handling
-const urlParams = new URLSearchParams(window.location.search);
-const token = urlParams.get('token');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QuantumAIxTrade | Processing Login</title>
+  <style>
+    body {
+      background: #0F2027;
+      background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
 
-if (token) {
-  window.location.href = `https://quantumaixtrade-backend.onrender.com/auth?token=${token}`;
-}
+  <h1>🔐 Logging you in securely...</h1>
+  <p>Please wait while we redirect you to your dashboard.</p>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+
+    if (token) {
+      // Send token to backend
+      fetch('https://quantumaixtrade-backend.onrender.com/save-token', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token })
+      })
+      .then(response => {
+        // Redirect to Deriv's main app or your dashboard
+        window.location.href = "https://app.deriv.com";
+      })
+      .catch(err => {
+        console.error("Failed to save token:", err);
+      });
+    } else {
+      document.body.innerHTML = "<h1>❌ Login failed. No token found.</h1>";
+    }
+  </script>
+
+</body>
+</html>
