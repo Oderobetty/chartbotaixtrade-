@@ -1,23 +1,27 @@
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
+const helmet = require('helmet');
+const morgan = require('morgan');
 const app = express();
-const port = process.env.PORT || 3000;
 
+app.use(helmet());
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(morgan('dev'));
 
-// Save token endpoint
-app.post('/save-token', (req, res) => {
-  const token = req.body.token;
-  console.log('✅ Token received from frontend:', token);
-  res.send('Token received!');
-});
-
-// Optional health check route
 app.get('/', (req, res) => {
-  res.send('Backend is running 🚀');
+  res.send('QuantumAIxTrade Backend is Running 🚀');
 });
 
-app.listen(port, () => {
-  console.log(`✅ Server running on port ${port}`);
+// OAuth callback endpoint example
+app.get('/auth', (req, res) => {
+  const token = req.query.token;
+  console.log('Received OAuth token:', token);
+  res.send(`Token received: ${token}`);
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
