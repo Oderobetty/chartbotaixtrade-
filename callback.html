@@ -1,45 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Logging you in…</title>
-  <style>
-    body { font-family: sans-serif; text-align: center; padding: 50px; }
-  </style>
-</head>
-<body>
-  <h2>🔐 Connecting to Deriv…</h2>
-  <p>Please hold on a moment…</p>
+// Example Deriv OAuth callback handling
+const urlParams = new URLSearchParams(window.location.search);
+const token = urlParams.get('token');
 
-  <script>
-    // Extract token from URL hash fragment
-    const hash = window.location.hash;
-    const params = new URLSearchParams(hash.substring(1));
-    const token = params.get('token');
-
-    if (token) {
-      console.log('✅ Token found:', token);
-
-      // Send token to your backend
-      fetch('https://chartbotaixtrade-1-zgsi.onrender.com/save-token', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token })
-      })
-      .then(response => response.text())
-      .then(data => {
-        console.log(data);
-        // Redirect to index.html with token
-        window.location.href = `index.html?token=${token}`;
-      })
-      .catch(error => {
-        console.error('❌ Error sending token:', error);
-        document.body.innerHTML = '<h2>Something went wrong while logging you in.</h2>';
-      });
-
-    } else {
-      document.body.innerHTML = '<h2>No token received from Deriv.</h2>';
-    }
-  </script>
-</body>
-</html>
+if (token) {
+  window.location.href = `https://quantumaixtrade-backend.onrender.com/auth?token=${token}`;
+}
