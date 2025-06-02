@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QuantumAIxTrade</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 60px;
+      background: #0F172A;
+      color: #F8FAFC;
+    }
+    h1 {
+      font-size: 48px;
+      color: #FACC15;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 14px 28px;
+      margin: 15px;
+      font-size: 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .signup {
+      background: #10B981;
+      color: white;
+    }
+    .login {
+      background: #3B82F6;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>QuantumAIxTrade</h1>
+  <p>Start trading smarter and earning commissions via Deriv.</p>
+
+  <button class="signup" onclick="signupClicked()">Create a Deriv Account</button>
+  <button class="login" onclick="loginClicked()">Login with Deriv</button>
+
+  <script>
+    function signupClicked() {
+      window.open('https://track.deriv.com/_BdWWYCtdLopZl7VyVw174GNd7ZgqdRLk/1/', '_blank');
+    }
+
+    function loginClicked() {
+      window.location.href = 'https://oauth.deriv.com/oauth2/authorize?app_id=76613&redirect_uri=https://chartbotaixtrade-1-zgsi.onrender.com/frontend/callback.html';
+    }
+  </script>
+
+</body>
+</html>
