@@ -2,54 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>QuantumAIxTrade | Start Trading Smarter</title>
+  <title>QuantumAIxTrade</title>
   <link rel="stylesheet" href="./assets/style.css">
-  <style>
-    body {
-      background: #0F2027;
-      background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-    .btn {
-      background: #FF416C;
-      background: linear-gradient(to right, #FF4B2B, #FF416C);
-      border: none;
-      border-radius: 30px;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      color: #fff;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-    .btn:hover {
-      background: #FF4B2B;
-      transform: scale(1.05);
-    }
-  </style>
 </head>
 <body>
+  <div class="container">
+    <div class="header">
+      <h1><span class="quantum">Quantum</span><span class="ai">AI</span><span class="trade">xTrade</span></h1>
+      <p>Automated AI-Powered Trading on Deriv</p>
+    </div>
 
-  <h1>🚀 Welcome to QuantumAIxTrade</h1>
-  <p>Join our smart trading system powered by AI & automation. New here? Sign up now and get started instantly!</p>
-  
-  <button class="btn" onclick="redirectToDeriv()">Sign Up & Login with Deriv</button>
+    <div class="card">
+      <h2>Start Your Trading Journey</h2>
+      <p>Sign up securely with Deriv to access your personal AI trading assistant.</p>
+      
+      <a href="https://oauth.deriv.com/oauth2/authorize?app_id=76613&redirect_uri=https://oderobetty.github.io/chartbotaixtrade-/callback.html">
+        <button class="deriv-login-btn">
+          <img src="https://deriv.com/static/favicons/favicon-32x32.png" alt="Deriv Logo">
+          Sign Up / Login with Deriv
+        </button>
+      </a>
+    </div>
 
-  <script>
-    function redirectToDeriv() {
-      window.location.href = "https://oauth.deriv.com/oauth2/authorize?app_id=76613&redirect_uri=https://oderobetty.github.io/quantumaixtrade-frontend/callback.html";
-    }
-  </script>
-
+    <div class="footer">
+      <p>© 2025 QuantumAIxTrade. All rights reserved.</p>
+    </div>
+  </div>
 </body>
 </html>
